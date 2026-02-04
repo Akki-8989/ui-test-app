@@ -1,0 +1,13 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: Akki-8989/Infrastructure/.github/workflows/deploy-ui-test-app.yml@main
+    with:
+      repo_name: ui-test-app
+      infra_repo: Infrastructure
+      backend_api_url: https://be-test-api-webapp.azurewebsites.net
+    secrets: inherit
